@@ -1,0 +1,11 @@
+<aura:component>
+    <aura:attribute name="childVar" type="String"/>
+
+    <aura:handler name="change" value="{!v.childVar}"
+                    action = "{!c.onChildVarChange}"/>
+
+        Child Compo : {!v.childVar}
+
+    <lightning:button label="update bounded child Var" onclick="{!c.updateChild}"/>
+    <hr/>
+</aura:component>

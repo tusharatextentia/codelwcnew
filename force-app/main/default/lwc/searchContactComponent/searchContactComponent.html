@@ -1,0 +1,73 @@
+<template>
+  <lightning-card title="Contact Search">
+
+      <div slot="footer" class="slds-align_absolute-center">
+          <lightning-button label="Add New Contact" onclick={handleAddNew}></lightning-button>
+        </div>
+
+    <div class="slds-m-around_medium">
+      <lightning-input type="search" label="Search" onchange={handleSearch}></lightning-input>
+    </div>
+    <template if:true={contacts}>
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Name">Name</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Phone">Phone</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Email">Email</div>
+            </th>
+            
+            <!-- <th class="" scope="col">
+              <div class="slds-truncate" title="Billing City">Title</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Billing State">Title</div>
+            </th>
+            <th class="" scope="col"> -->
+
+              <div class="slds-truncate" title="Actions">Actions</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <template for:each={contacts} for:item="contact">
+            <tr key={contact.Id} class="slds-hint-parent">
+              <td data-label="Name">
+                <div class="slds-truncate">{contact.Name}</div>
+              </td>
+              <td data-label="Phone">
+                <div class="slds-truncate">{contact.Phone}</div>
+              </td>
+              <td data-label="Email">
+                <div class="slds-truncate">{contact.Email}</div>
+              </td>
+              
+              <!-- <td data-label="Title">
+                <div class="slds-truncate">{Account.BillingCity}</div>
+              </td>
+              <td data-label="Title">
+                <div class="slds-truncate">{Account.BillingState}</div>
+              </td> -->
+              
+              <td data-label="Actions">
+                <lightning-button-menu icon-name="utility:settings" alternative-text="Settings" onselect={handleMenuSelect}>
+                  <lightning-menu-item value="View" label="View"></lightning-menu-item>
+                  <lightning-menu-item value={contact.Id} label="Edit"></lightning-menu-item>
+                  <lightning-menu-item value={contact.Id} label="Delete"></lightning-menu-item>
+                </lightning-button-menu>
+              </td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </template>
+    <template if:true={noRecordsFound}>
+      No records found.
+    </template>
+  </lightning-card>
+</template>

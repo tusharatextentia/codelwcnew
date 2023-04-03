@@ -1,0 +1,22 @@
+<aura:component controller="AccountController">
+    
+    <aura:attribute name="accList" type="List" />
+
+    <!-- Whenever comp loads handler will call the action defined (doInit) -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!-- dropdown creation -->
+    <lightning:select name="select1" label="Call account form aura Comp : Select an Account">
+
+        <!-- First option will be null and will be labelled as None -->
+        <option value="null">   None    </option>
+
+        <!-- items form accList will be iterate one by one into item variable below -->
+        <aura:iteration items="{!v.accList}" var="item">
+                
+            <!-- each option will be displayed using its name but for internal process its Id will be used -->
+            <option value="{!item.Id}"> {!item.Name} </option>
+        </aura:iteration>
+    </lightning:select>
+
+</aura:component>

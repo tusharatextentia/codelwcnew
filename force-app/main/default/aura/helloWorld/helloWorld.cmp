@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+
+
+	<c:accountLC/>
+	<hr/>
+	<c:boundedParent/>
+	<hr/>
+	<c:unboundedParent/>
+	<hr/>
+	<c:LCDemo3/>
+	<hr/>
+	<c:DemoComp/>
+
+</aura:component>

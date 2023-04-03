@@ -1,0 +1,6 @@
+<aura:component >
+	<p>
+        My 2nd aura component
+        <hr/>
+    </p>
+</aura:component>

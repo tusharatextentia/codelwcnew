@@ -1,0 +1,19 @@
+<aura:component>
+ <!-- Initialized values    -->
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+<!-- On button Click -->
+<aura:attribute name="Sapkal" type="String"/>
+
+    Student Info: {!v.Sapkal}
+
+<lightning:button label="Enter" onclick="{!c.handleClick1}"/>
+
+<hr/>
+
+<aura:attribute name="message"  type="String"/>
+
+    Hello : {!v.message}
+
+    <lightning:button label="ClickMe" onclick="{!c.handleClick}"/>
+</aura:component>

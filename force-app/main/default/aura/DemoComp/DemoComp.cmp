@@ -1,0 +1,63 @@
+<aura:component >
+
+<!-- After loading this comp. following handler with interact with jsComponent -->
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+
+    <aura:attribute name="userData" type="LCDemoWrapper.WrapperTest"/>
+
+    Wrapper Values : {!v.userData.myString1} - {!v.userData.myInteger1}  
+
+<hr/>
+
+<aura:attribute name="jsObject" type="Object" />
+    
+    jsObject Values : Name: {!v.jsObject.name} 
+                      Email: {!v.jsObject.email} 
+
+<hr/>
+    <aura:attribute name="mapDemo" type="Map"      
+                    default="   {   a:'m1' , b:'m2' , c:'m3' , d:'m4'   } "  />
+    <!-- for map we use curly braces instead of square braces asin List, set, Map -->
+
+    Map Values : {!v.mapDemo.b}
+
+<hr/>
+    <aura:attribute name="setDemo" type="Set"      
+                     default="['s1' , 's2' , 's3']"  />
+
+     Length of Set : {!v.setDemo.length}    
+     Set Values : {!v.setDemo[0]}
+
+<hr/>    
+    <aura:attribute name="listDemo" type="List"
+                    default="['List1' , 'List2' , 'List3']" />
+
+    Length of List : {!v.listDemo.length}    
+    List Values : {!v.listDemo[2]}
+
+<hr/>
+    <aura:attribute name="arrayDemo" type="String[]"      
+                     default="['v1' , 'v2' , 'v3']"  />
+
+    Array Values : {!v.arrayDemo[1]}
+
+<hr/>
+    <aura:attribute name="Var1" type="String" default="Test Value" />
+        
+        <h1>
+            component attribute Value : {!v.Var1}
+        </h1>
+
+<hr/>
+
+    <aura:attribute name="newAcc" type="Account"
+                        default="{
+                                'sobjectType' : 'Account' ,
+                                'Name' : 'TestAcc1'  
+                                }" />
+
+        <h1>
+            {!v.newAcc.Name}
+        </h1>
+</aura:component>

@@ -1,0 +1,29 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" 
+                			controller="AccountController">
+	<aura:attribute name="accounts" type="Account[]" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Billing City</th>
+                <th>Billing State</th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.accounts}" var="account">
+                <tr>
+                    <td>{!account.Name}</td>
+                    <td>{!account.Email__c}</td>
+                    <td>{!account.Mobile__c}</td>
+                    <td>{!account.BillingCity}</td>
+                    <td>{!account.BillingState}</td>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>
