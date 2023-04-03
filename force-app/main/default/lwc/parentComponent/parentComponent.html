@@ -1,0 +1,22 @@
+<template>
+    
+    <lightning-card title="Wire demo">
+        <lightning-datatable 
+                            key-field = "id"
+                            data = {data}
+                            columns={column}>
+        </lightning-datatable>
+    </lightning-card>
+
+    <lightning-card title="Full Name track demo" class="slds-p-horizontal_x-small">
+        <lightning-input name="firstname" label="First Name" onchange={handleChange} placeholder="type here..."></lightning-input>
+        <lightning-input name="lastname"  label="Last Name"  onchange={handleChange} placeholder="type here..."></lightning-input>
+        full Name = <b>{fullName.firstname} {fullName.lastname}</b>
+    </lightning-card>
+
+    <lightning-card title="Parent Component" class="slds-p-horizontal_x-small">
+            <c-child-component ></c-child-component>
+        <lightning-button variant="brand" label="Change"  onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </lightning-card>
+
+</template> 
